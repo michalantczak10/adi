@@ -39,7 +39,7 @@ public class ReusableFeatures {
     }
 
     public void waitForPageTitle(String expectedPageTitle) {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds());
         wait.until(ExpectedConditions.titleIs(expectedPageTitle));
     }
 
@@ -70,7 +70,7 @@ public class ReusableFeatures {
     }
 
     public String waitForVisibilityOfElementAndGetElementText(String expectedPageTitle, By element) {
-        waitForPageTitle(ExpectedPageTitles.INVESTING_PAGE.getExpectedPageTitle());
+        waitForPageTitle(expectedPageTitle);
         waitForVisibilityOfElement(element);
         return driver.findElement(element).getText();
     }

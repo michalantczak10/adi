@@ -24,7 +24,6 @@ public class InvestingPage {
     }
 
     public Integer getIndicatorsStatesSummary() {
-//        reusableFeatures.openWebsite("https://www.investing.com/crypto/litecoin/technical", ExpectedPageTitles.INVESTING_PAGE.getExpectedPageTitle(), false);
         if (getIndicatorsState().equals("Mocne kup") || getIndicatorsState().equals("Kup")) {
             return 1;
         } else if (getIndicatorsState().equals("Mocne sprzedaj") || getIndicatorsState().equals("Sprzedaj")) {
