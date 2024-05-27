@@ -1,10 +1,10 @@
-package Brain;
+package adi;
 
-import Brain.enums.ExpectedPageTitles;
-import Brain.pages.InvestingPage;
-import Brain.pages.XtbHomePage;
-import Brain.pages.XtbLoginPage;
-import Brain.reusableFeatures.ReusableFeatures;
+import adi.enums.ExpectedPageTitles;
+import adi.pages.InvestingPage;
+import adi.pages.XtbHomePage;
+import adi.pages.XtbLoginPage;
+import adi.reusableFeatures.ReusableFeatures;
 import io.github.bonigarcia.wdm.WebDriverManager;
 import org.jetbrains.annotations.NotNull;
 import org.junit.After;
@@ -13,9 +13,9 @@ import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 
-import static Brain.enums.ExpectedPageTitles.XTB_PAGE;
+import static adi.enums.ExpectedPageTitles.XTB_PAGE;
 
-public class TestBrain {
+public class TestAdi {
 
     WebDriver driver;
 
@@ -28,7 +28,7 @@ public class TestBrain {
     }
 
     @Test
-    public void testBrain() {
+    public void testAdi() {
         ReusableFeatures reusableFeatures = new ReusableFeatures(driver);
         InvestingPage investingPage = new InvestingPage(driver);
         XtbLoginPage xtbLoginPage = new XtbLoginPage(driver);

@@ -1,6 +1,6 @@
-package Brain.pages;
+package adi.pages;
 
-import Brain.enums.ExpectedPageTitles;
+import adi.enums.ExpectedPageTitles;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;

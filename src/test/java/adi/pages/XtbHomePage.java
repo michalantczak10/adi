@@ -1,7 +1,7 @@
-package Brain.pages;
+package adi.pages;
 
-import Brain.enums.ExpectedPageTitles;
-import Brain.reusableFeatures.ReusableFeatures;
+import adi.enums.ExpectedPageTitles;
+import adi.reusableFeatures.ReusableFeatures;
 import org.openqa.selenium.By;
 import org.openqa.selenium.Keys;
 import org.openqa.selenium.WebDriver;

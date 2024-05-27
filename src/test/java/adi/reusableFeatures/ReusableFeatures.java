@@ -1,6 +1,6 @@
-package Brain.reusableFeatures;
+package adi.reusableFeatures;
 
-import Brain.enums.ExpectedPageTitles;
+import adi.enums.ExpectedPageTitles;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;

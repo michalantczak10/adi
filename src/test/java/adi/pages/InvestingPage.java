@@ -1,7 +1,7 @@
-package Brain.pages;
+package adi.pages;
 
-import Brain.enums.ExpectedPageTitles;
-import Brain.reusableFeatures.ReusableFeatures;
+import adi.enums.ExpectedPageTitles;
+import adi.reusableFeatures.ReusableFeatures;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
 
@@ -24,7 +24,7 @@ public class InvestingPage {
     }
 
     public Integer getIndicatorsStatesSummary() {
-        reusableFeatures.openWebsite("https://www.investing.com/crypto/litecoin/technical", ExpectedPageTitles.INVESTING_PAGE.getExpectedPageTitle(), false);
+//        reusableFeatures.openWebsite("https://www.investing.com/crypto/litecoin/technical", ExpectedPageTitles.INVESTING_PAGE.getExpectedPageTitle(), false);
         if (getIndicatorsState().equals("Mocne kup") || getIndicatorsState().equals("Kup")) {
             return 1;
         } else if (getIndicatorsState().equals("Mocne sprzedaj") || getIndicatorsState().equals("Sprzedaj")) {

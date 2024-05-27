@@ -1,4 +1,4 @@
-package Brain.enums;
+package adi.enums;
 
 public enum ExpectedPageTitles {
     INVESTING_PAGE("Litecoin (LTC) Technical Analysis - Investing.com"),
