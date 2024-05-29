@@ -13,8 +13,6 @@ import org.junit.Test;
 import org.openqa.selenium.WebDriver;
 import org.openqa.selenium.edge.EdgeDriver;
 
-import java.util.Properties;
-
 import static adi.enums.ExpectedPageTitles.XTB_PAGE;
 
 public class TestAdi {

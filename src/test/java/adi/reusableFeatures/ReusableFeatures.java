@@ -1,6 +1,6 @@
 package adi.reusableFeatures;
 
-import adi.enums.ExpectedPageTitles;
+import adi.enums.Parameters;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
 import org.openqa.selenium.support.ui.WebDriverWait;
@@ -20,6 +20,7 @@ public class ReusableFeatures {
         if (openInNewTab) {
             driver.switchTo().newWindow(WindowType.TAB);
         }
+
         driver.get(url);
 
         if (openInNewTab) {
@@ -39,12 +40,12 @@ public class ReusableFeatures {
     }
 
     public void waitForPageTitle(String expectedPageTitle) {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds());
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(Parameters.WAIT_TIME.getParameter()));
         wait.until(ExpectedConditions.titleIs(expectedPageTitle));
     }
 
     public void waitForVisibilityOfElement(By element) {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(Parameters.WAIT_TIME.getParameter()));
         wait.until(ExpectedConditions.visibilityOfElementLocated(element));
     }
 
