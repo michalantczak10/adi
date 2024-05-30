@@ -8,9 +8,9 @@ import org.openqa.selenium.WebDriver;
 public class InvestingPage {
     ReusableFeatures reusableFeatures;
     WebDriver driver;
-    public By indicatorsState = By.id(".rounded-full.text-center.mb-6.mt-1.font-semibold.leading-5.text-white");
+    public By indicatorsState = By.xpath("//span[contains(@class, 'conclusion')]");
     public By acceptCookiesButton = By.xpath("//*[@id='onetrust-accept-btn-handler']");
-    public By interval1DButton = By.xpath("//*[@id=\"__next\"]/div[2]/div[2]/div[2]/div[1]/div[3]/div/div[1]/div/button[7]");
+    public By interval1DButton = By.xpath("//button[@data-test='1d']");
 
     public InvestingPage(WebDriver driver) {
         this.driver = driver;
@@ -24,9 +24,9 @@ public class InvestingPage {
     }
 
     public Integer getIndicatorsStatesSummary() {
-        if (getIndicatorsState().equals("Mocne kup") || getIndicatorsState().equals("Kup")) {
+        if (getIndicatorsState().equals("Strong Buy") || getIndicatorsState().equals("Buy")) {
             return 1;
-        } else if (getIndicatorsState().equals("Mocne sprzedaj") || getIndicatorsState().equals("Sprzedaj")) {
+        } else if (getIndicatorsState().equals("Strong Sell") || getIndicatorsState().equals("Sell")) {
             return -1;
         } else {
             return 0;
