@@ -49,7 +49,7 @@ public class XtbHomePage {
 
     public void openSellPosition() {
         reusableFeatures.waitForPageTitle(ExpectedPageTitles.XTB_PAGE.getExpectedPageTitle());
-        reusableFeatures.waitForVisibilityOfElementAndSendKeysToElement(ExpectedPageTitles.XTB_PAGE.getExpectedPageTitle(), search, "SOLANA");
+        reusableFeatures.waitForVisibilityOfElementAndSendKeysToElement(ExpectedPageTitles.XTB_PAGE.getExpectedPageTitle(), search, "LITECOIN");
         reusableFeatures.waitForVisibilityOfElementAndSendKeysToElement(ExpectedPageTitles.XTB_PAGE.getExpectedPageTitle(), search, String.valueOf(Keys.ENTER));
 //        driver.findElement(search).sendKeys(Keys.ENTER);
         reusableFeatures.waitForVisibilityOfElementAndClick(ExpectedPageTitles.XTB_PAGE.getExpectedPageTitle(), sellButton);
@@ -58,7 +58,7 @@ public class XtbHomePage {
 
     public void openBuyPosition() {
         reusableFeatures.waitForPageTitle(ExpectedPageTitles.XTB_PAGE.getExpectedPageTitle());
-        reusableFeatures.waitForVisibilityOfElementAndSendKeysToElement(ExpectedPageTitles.XTB_PAGE.getExpectedPageTitle(), search, "SOLANA");
+        reusableFeatures.waitForVisibilityOfElementAndSendKeysToElement(ExpectedPageTitles.XTB_PAGE.getExpectedPageTitle(), search, "LITECOIN");
         reusableFeatures.waitForVisibilityOfElementAndSendKeysToElement(ExpectedPageTitles.XTB_PAGE.getExpectedPageTitle(), search, String.valueOf(Keys.ENTER));
 //        driver.findElement(search).sendKeys(Keys.ENTER);
         reusableFeatures.waitForVisibilityOfElementAndClick(ExpectedPageTitles.XTB_PAGE.getExpectedPageTitle(), buyButton);

@@ -1,6 +1,7 @@
 package adi.pages;
 
 import adi.enums.ExpectedPageTitles;
+import adi.enums.Parameters;
 import org.junit.Assert;
 import org.openqa.selenium.By;
 import org.openqa.selenium.WebDriver;
@@ -23,7 +24,7 @@ public class XtbLoginPage {
         String actualTitle = driver.getTitle();
         String expectedTitle = ExpectedPageTitles.XTB_PAGE.getExpectedPageTitle();
         Assert.assertEquals(expectedTitle, actualTitle);
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(20));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(Parameters.WAIT_TIME.getParameter()));
         wait.until(ExpectedConditions.visibilityOfElementLocated(login));
         driver.findElement(login).sendKeys("michalantczak@outlook.com");
         wait.until(ExpectedConditions.visibilityOfElementLocated(password));
