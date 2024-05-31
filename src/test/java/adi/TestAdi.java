@@ -27,7 +27,8 @@ public class TestAdi {
 //        driver.manage().window().maximize();
 //        driver.manage().deleteAllCookies();
 
-        WebDriverManager.edgedriver().setup();
+//        WebDriverManager.edgedriver().setup();
+        WebDriverManager.edgedriver().cachePath("edge").setup();
         driver = new EdgeDriver();
         driver.manage().window().maximize();
         driver.manage().deleteAllCookies();

@@ -49,7 +49,7 @@
                         </includes>
                         <!-- Konfiguracja dla trybu bezgłowego (headless) -->
                         <systemPropertyVariables>
-                            <webdriver.edge.driver>ścieżka/do/msedgedriver.exe</webdriver.edge.driver>
+                            <webdriver.edge.driver>edge/msedgedriver/win64/125.0.2535.79/msedgedriver.exe</webdriver.edge.driver>
                         </systemPropertyVariables>
                         <!-- Ustawienia dotyczące raportowania i formatowania wyników -->
                         <reportsDirectory>${project.build.directory}/surefire-reports</reportsDirectory>
@@ -82,7 +82,7 @@
         <dependency>
             <groupId>org.testng</groupId>
             <artifactId>testng</artifactId>
-            <version>7.10.2</version>
+            <version>7.7.1</version>
         </dependency>
         <dependency>
             <groupId>io.github.bonigarcia</groupId>
