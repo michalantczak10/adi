@@ -22,14 +22,8 @@ public class TestAdi {
 
     @Before
     public void setup() {
-//        WebDriverManager.chromedriver().setup();
-//        driver = new ChromeDriver();
-//        driver.manage().window().maximize();
-//        driver.manage().deleteAllCookies();
-
-//        WebDriverManager.edgedriver().setup();
-        WebDriverManager.edgedriver().cachePath("edge").setup();
-        driver = new EdgeDriver();
+        WebDriverManager.chromedriver().setup();
+        driver = new ChromeDriver();
         driver.manage().window().maximize();
         driver.manage().deleteAllCookies();
     }
