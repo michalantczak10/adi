@@ -2,6 +2,7 @@ package adi.pages;
 
 import adi.reusable.Reusable;
 import org.openqa.selenium.*;
+import org.openqa.selenium.interactions.Actions;
 
 import static adi.enums.ExpectedPageTitles.XTB_HOME_PAGE;
 
@@ -23,7 +24,7 @@ public class XtbHomePage {
             "/html/body/div[1]/div[2]/div[1]/div[1]/div[2]/div/div[2]/div[3]/div/div/div[1]/div/div[5]/div/div/div/div[2]/div[2]");
     public By bollingerBands = By.xpath("//div[contains(@class, 'indicator-label-container')]//span[contains(text(), 'Bollinger [20, 2.5]')]/following-sibling::span[@class='indicator-value-label ng-binding']");
     public By currentClosePrice = By.xpath("//div[contains(@class, 'indicator-label-container')]//span[contains(text(), 'SMA [1, 0]')]/following-sibling::span[@class='indicator-value-label ng-binding']");
-    public By d1Button = By.xpath("//span[text()='D1']");
+    public By interval1D = By.xpath("//a[contains(text(), '1D')]");
 
 
     public XtbHomePage(WebDriver driver) {
@@ -50,12 +51,16 @@ public class XtbHomePage {
         reusable.waitForVisibilityAndSendKeysToElement(XTB_HOME_PAGE.getExpectedPageTitle(), search, String.valueOf(Keys.ENTER));
     }
 
-public void selectInterval(String interval) {
+    public void selectInterval(String interval) {
         reusable.waitForVisibilityOfElementAndClick(XTB_HOME_PAGE.getExpectedPageTitle(), intervalButton);
-        reusable.waitForVisibilityOfElementAndClick(XTB_HOME_PAGE.getExpectedPageTitle(), By.xpath("//a[contains(text(), '" + interval + "')]"));
-
-//    JavascriptExecutor js = (JavascriptExecutor) driver;
-//    js.executeScript("arguments[0].click();", d1Button);
+        try {
+            WebElement element = driver.findElement(By.cssSelector(".jspPane"));
+            JavascriptExecutor js = (JavascriptExecutor) driver;
+            js.executeScript("arguments[0].style.transform = 'translate3d(0px, -135px, 0px)';", element);
+            reusable.waitForVisibilityOfElementAndClick(XTB_HOME_PAGE.getExpectedPageTitle(), By.xpath("//a[contains(text(), '" + interval + "')]"));
+        } catch (Exception e) {
+            throw new RuntimeException(e);
+        }
     }
 
     public double getCurrentClosePriceValue() {

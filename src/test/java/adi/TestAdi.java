@@ -33,7 +33,7 @@ public class TestAdi {
         xtbLoginPage.login();
         xtbHomePage.selectAccount("DEMO");
         xtbHomePage.selectSymbol("SOLANA");
-        xtbHomePage.selectInterval("1D");
+        xtbHomePage.selectInterval("MN");
         if (xtbHomePage.checkBollingerBandsTrend() == -1 && xtbHomePage.getOpenPositionType().equals(-1)) {
             System.out.println("BOLLINGER(20, 2.5):");
             System.out.println("AKTUALNA CENA: " + xtbHomePage.getCurrentClosePriceValue());
