@@ -1,5 +1,6 @@
 package adi.reusable;
 
+import adi.enums.Urls;
 import adi.enums.Parameters;
 import org.openqa.selenium.*;
 import org.openqa.selenium.support.ui.ExpectedConditions;
@@ -14,18 +15,17 @@ public class Reusable {
         this.driver = driver;
     }
 
-    public void openWebsite(String url, String expectedPageTitle) {
+    public void openUrl(String url) {
         driver.get(url);
-        waitForPageTitle(expectedPageTitle);
     }
 
-    public void waitForPageTitle(String expectedPageTitle) {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(Parameters.WAIT_TIME.getParameter()));
-        wait.until(ExpectedConditions.titleIs(expectedPageTitle));
+    public void waitForPage(String expectedUrl) {
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(Parameters.TIMEOUT.getParameter()));
+        wait.until(ExpectedConditions.urlToBe(expectedUrl));
     }
 
     public void waitForVisibilityOfElement(By element) {
-        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(Parameters.WAIT_TIME.getParameter()));
+        WebDriverWait wait = new WebDriverWait(driver, Duration.ofSeconds(Parameters.TIMEOUT.getParameter()));
         wait.until(ExpectedConditions.visibilityOfElementLocated(element));
     }
 
@@ -34,14 +34,14 @@ public class Reusable {
         webElement.click();
     }
 
-    public void waitForVisibilityOfElementAndClick(String expectedPageTitle, By element) {
-        waitForPageTitle(expectedPageTitle);
+    public void waitForVisibilityOfElementAndClick(By element) {
+//        waitForPageTitle(expectedPageTitle);
         waitForVisibilityOfElement(element);
         clickElement(element);
     }
 
-    public void waitForVisibilityAndSendKeysToElement(String expectedPageTitle, By element, String value) {
-        waitForPageTitle(expectedPageTitle);
+    public void waitForVisibilityAndSendKeysToElement(By element, String value) {
+//        waitForPageTitle(expectedPageTitle);
         waitForVisibilityOfElement(element);
         sendKeysToElement(element, value);
     }
@@ -50,8 +50,8 @@ public class Reusable {
         driver.findElement(element).sendKeys(symbolName);
     }
 
-    public String waitForVisibilityAndGetElementText(String expectedPageTitle, By element) {
-        waitForPageTitle(expectedPageTitle);
+    public String waitForVisibilityAndGetElementText(By element) {
+//        waitForPageTitle(expectedPageTitle);
         waitForVisibilityOfElement(element);
         return driver.findElement(element).getText();
     }

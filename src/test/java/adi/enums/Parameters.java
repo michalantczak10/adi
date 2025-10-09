@@ -1,7 +1,7 @@
 package adi.enums;
 
 public enum Parameters {
-    WAIT_TIME(30);
+    TIMEOUT(10);
 
     private final int parameter;
 
