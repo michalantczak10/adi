@@ -1,0 +1,1 @@
+"""XTB Bollinger strategy automation."""
