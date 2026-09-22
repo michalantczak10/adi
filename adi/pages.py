@@ -54,8 +54,16 @@ class XtbHomePage:
         self.settings = settings
 
     def select_account_type(self, account: str) -> None:
+        normalized_account = account.strip().upper()
+        if normalized_account == "DEMO":
+            account_locator = self.demo_account
+        elif normalized_account == "REAL":
+            account_locator = self.real_account
+        else:
+            raise ValueError(f"Unsupported account: {account!r}")
+
         self.reusable.click(self.select_account)
-        self.reusable.click(self.demo_account if account == "DEMO" else self.real_account)
+        self.reusable.click(account_locator)
 
     def select_symbol(self, symbol: str) -> None:
         self.reusable.send_keys(self.search, symbol)
@@ -103,7 +111,12 @@ class XtbHomePage:
             self.reusable.wait_for_visibility(self.open_position)
         except TimeoutException:
             return 0
-        return -1 if self.reusable.text(self.position_type) == "Sell" else 1
+        position_type = self.reusable.text(self.position_type).strip()
+        if position_type == "Sell":
+            return -1
+        if position_type == "Buy":
+            return 1
+        raise RuntimeError(f"Unexpected open position type: {position_type!r}")
 
     def open_buy(self) -> None:
         self.select_symbol(self.settings.symbol)
